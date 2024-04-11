@@ -15,7 +15,11 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Use Node.js 20.x
+<<<<<<< HEAD
       uses: actions/setup-node@v4
+=======
+      uses: actions/setup-node@v3
+>>>>>>> a35d68e9d49444f43f99f06876ef8687bc26e84b
       with:
         node-version: 20.x
         cache: 'npm'
