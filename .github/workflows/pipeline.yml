@@ -1,0 +1,27 @@
+name: Pipeline for Library-retake-exam app 
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build-an-unit-tests:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js 20.x
+      uses: actions/setup-node@v3
+      with:
+        node-version: 20.x
+        cache: 'npm'
+    - name: Checkout the repository 
+      run: npm install 
+    - name: Run Unit tests 
+      run: npm run test:unit
+    - name: Show my username
+      run: echo "username - ssllaavv"
